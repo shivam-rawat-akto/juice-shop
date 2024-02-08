@@ -1,0 +1,17 @@
+name: Run code analysis
+
+on:
+  workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - uses: akto-api-security/code-analysis@v1.0.0
+        with:
+          REPOSITORY_PATH: ${{ github.workspace }}
