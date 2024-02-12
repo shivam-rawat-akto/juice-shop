@@ -7,6 +7,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: code-analysis
-        run: docker run --rm -t -e REPOSITORY_PATH=${{ github.workspace }} shivamrawat10/code-analysis:latest >> $GITHUB_STEP_SUMMARY
+        run: docker run --rm -t -e REPOSITORY_PATH=$GITHUB_WORKSPACE shivamrawat10/code-analysis:latest >> $GITHUB_STEP_SUMMARY
