@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: code-analysis
-        run: docker run --rm -t -v "$PWD:/project"  shivamrawat10/code-analysis:latest >> $GITHUB_STEP_SUMMARY
+        run: docker run --rm -t -v "$PWD:/project"  shivamrawat10/code-analysis:latest >> $$GITHUB_OUTPUT
