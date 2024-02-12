@@ -8,9 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '17'
-      - uses: akto-api-security/code-analysis@v1.0.0
-        with:
-          REPOSITORY_PATH: ${{ github.workspace }}
+      - name: code-analysis
+        run: docker run --rm -t -e REPOSITORY_PATH=${{ github.workspace }} shivamrawat10/code-analysis:latest >> $GITHUB_STEP_SUMMARY
