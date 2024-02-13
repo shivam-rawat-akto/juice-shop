@@ -11,4 +11,4 @@ jobs:
       - name: directory_path
         run: echo "$PWD" and ls
       - name: code-analysis
-        run: docker run --rm -t -v "$PWD:/project"  shivamrawat10/code-analysis:latest | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' >> $GITHUB_STEP_SUMMARY
+        run: docker run --rm -t -v "$PWD:/project"  shivamrawat10/code-analysis:latest | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' >> "$GITHUB_STEP_SUMMARY"
